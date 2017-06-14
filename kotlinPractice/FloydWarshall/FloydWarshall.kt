@@ -1,8 +1,8 @@
-package FloydWarshall
 /**
  * Created by Shlomi Alon on 30/05/2017.
  */
-//Floyd – Warshall   algorithm 4 problems
+package FloydWarshall
+//Floyd â€“ Warshall   algorithm 4 problems
     fun  isConnectable(graph: Array<Array<Boolean>>){
     for(k in 0..graph.size-1) {
             for (i in graph.indices){
@@ -69,7 +69,7 @@ fun numberOfTheConnectedComponents(mat: Array<IntArray>): IntArray {
     return ansArr
 }
 
-//Floyd – Warshall   algorithm for weight graph
+//Floyd â€“ Warshall   algorithm for weight graph
 fun buildMatrix(graph:Array<Array<Int>>) {
     var size = graph.size
     var pathMatrix: Array<Array<String>> = arrayOf(arrayOf("", "", "", ""), arrayOf("", "", "", ""), arrayOf("", "", "", ""), arrayOf("", "", "", ""))
