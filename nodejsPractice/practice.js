@@ -115,3 +115,14 @@ eventListeners = require('events').EventEmitter.listenerCount(eventEmitter,'conn
 console.log(eventListeners + " Listner(s) listening to connection event");
 
 console.log("Program Ended.");
+
+buf = new Buffer(20);
+len = buf.write("Simply Easy Learning");
+
+console.log("Octets written : "+  len + " " + buf.toString());
+
+
+//var buf = new Buffer('Simply Easy Learning');
+var json = buf.toJSON(buf);
+
+console.log(json);
