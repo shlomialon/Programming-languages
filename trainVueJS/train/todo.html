@@ -7,16 +7,17 @@
 <body>
 
 <div id="app">
-    <input v-model="newItemText"/>
+    <input v-on:keyup.enter="addToList" v-model="newItemText" type="text" class="inputTask" placeholder="insert task to list.."/>
     <button v-on:click="addToList">Add Item</button>
     <ul>
-        <li @click='selectItemEdit(item)' v-for="item in items">{{item.text}}</li>
+        <li @click='selectItemEdit(item)' v-for="item in items">
+            <div v-bind:style="{'text-decoration': item.activity ? 'line-through' : null}">{{item.text}}</div>
+        </li>
     </ul>
     <div v-if="selectedItem">
         <label for="item-text">text:</label>
-        <input  id="item-text" type=text v-model="selectedItem.text"/>
-        <label for="item-checkbox">activity:</label>
-        <input type="checkbox" id="item-checkbox" v-model="selectedItem.activity" :checked="selectedItem.activity">
+        <input id="item-text" type=text v-model="selectedItem.text"/>
+        <button v-bind:style="{'background-color': selectedItem.activity ? '#4CAF50' : 'red'}" v-on:click="changeStatus">{{selectedItem.activity}}</button>
     </div>
 </div>
 
