@@ -22,10 +22,20 @@ var app = new Vue({
                     activity: false
                 })
             }
-            this.newItem = {text: null}
+            this.newItem = {text: null};
         },
         selectItemEdit: function (item) {
             this.selectedItem = item;
+        },
+        changeStatus: function () {
+            if(this.selectedItem.activity){
+                this.selectedItem.activity = false;
+            }else {
+                this.selectedItem.activity = true;
+            }
         }
+    },
+    created : function () {
+        console.log('data:', this.$data);
     }
 });
