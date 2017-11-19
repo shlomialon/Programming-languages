@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+</head>
+<body>
+<div id="app-1">
+    {{ message }}
+</div>
+
+<div id="app-2">
+    <span v-bind:title="message">
+        over mouse :)
+    </span>
+</div>
+
+<div id="app-3">
+    <span v-if="seen">You see me?</span>
+</div>
+
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{todo.mession}}
+        </li>
+    </ol>
+</div>
+
+<div id="app-5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+
+<div id="app-6">
+    <p>{{message}}</p>
+    <input v-model="message">
+</div>
+
+
+<div id="app-7">
+    <ol>
+        <todo-item v-for="item in items"
+                   v-bind:todo="item"
+                   v-bind:key="item.id">
+        </todo-item>
+    </ol>
+</div>
+<div id="app">
+<h1>My simple todo list:</h1>
+<todo-form></todo-form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input v-model="newItemText"/>
+    <button v-on:click="addToList">Add Item</button>
+    <ul>
+        <li @click='selectItemEdit(item)' v-for="item in items">{{item.text}}</li>
+    </ul>
+    <div v-if="selectedItem">
+        <label for="item-text">text:</label>
+        <input  id="item-text" type=text v-model="selectedItem.text"/>
+        <label for="item-checkbox">activity:</label>
+        <input type="checkbox" id="item-checkbox" v-model="selectedItem.activity" :checked="selectedItem.activity">
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="todo.js"></script>
+</body>
+</html>
